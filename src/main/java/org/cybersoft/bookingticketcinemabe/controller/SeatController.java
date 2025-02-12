@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.cybersoft.bookingticketcinemabe.annotation.validator.ValidSeat;
 import org.cybersoft.bookingticketcinemabe.dto.PageableDTO;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping
+@Tag(name = "Seat", description = "APIs for managing seat information in cinema halls")
 public interface SeatController {
     @GetMapping("/seats")
     ResponseEntity<BaseResponse<PageableDTO<List<SeatDetailDTO>>>> getSeats(SeatCriteria seatCriteria);

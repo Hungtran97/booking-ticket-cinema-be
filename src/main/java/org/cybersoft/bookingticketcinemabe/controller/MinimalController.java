@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.cybersoft.bookingticketcinemabe.dto.PageableDTO;
 import org.cybersoft.bookingticketcinemabe.dto.minimal.MinimalDTO;
 import org.cybersoft.bookingticketcinemabe.dto.minimal.MinimalHallDTO;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @RequestMapping("/minimal")
+@Tag(name = "Minimal", description = "APIs for minimal and essential operations")
 public interface MinimalController {
     @GetMapping("/movies")
     ResponseEntity<BaseResponse<PageableDTO<List<MinimalMovieDTO>>>> getMovies(MinimalCriteria minimalCriteria);
