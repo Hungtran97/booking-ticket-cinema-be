@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.cybersoft.bookingticketcinemabe.payload.request.hall.HallCreationRequest;
 import org.cybersoft.bookingticketcinemabe.payload.request.hall.HallCriteria;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping
+@Tag(name = "Hall", description = "APIs for managing cinema hall information")
 public interface HallController {
     @GetMapping("/halls")
     ResponseEntity<?> getHalls(HallCriteria hallCriteria);

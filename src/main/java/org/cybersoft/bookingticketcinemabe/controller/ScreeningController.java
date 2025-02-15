@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.cybersoft.bookingticketcinemabe.payload.request.screening.ScreeningCreationRequest;
 import org.cybersoft.bookingticketcinemabe.payload.request.screening.ScreeningCriteria;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping
+@Tag(name = "Screening", description = "APIs for managing movie screening schedules")
 public interface ScreeningController {
     @GetMapping("/screenings")
     ResponseEntity<?> getScreenings(ScreeningCriteria screeningCriteria);

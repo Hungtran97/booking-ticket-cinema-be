@@ -1,15 +1,17 @@
 spring:
   config:
-    import: optional:file:.env.properties
+    import: optional:file:@env_file@
   application:
     name: booking-ticket-cinema-be
+  profiles:
+    active: @spring.profile.active@
   jpa:
     hibernate:
       ddl-auto: validate
     show-sql: true
   datasource:
     url: ${MYSQL_URL}/${MYSQL_DATABASE}?allowMultiQueries=true
-    username: root
+    username: ${MYSQL_ROOT_USERNAME}
     password: ${MYSQL_ROOT_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   data:
@@ -41,3 +43,17 @@ cloudflare:
     endpoint: ${R2_ENDPOINT}
     bucket: ${R2_BUCKET}
     public-path: ${R2_PUBLIC_PATH}
+open:
+  api:
+    title: ${OPEN_API_TITLE}
+    version: ${OPEN_API_VERSION}
+    description: ${OPEN_API_DESCRIPTION}
+    serverUrl: ${OPEN_API_SERVER_URL}
+    serverName: ${OPEN_API_SERVER_NAME}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: "Authentication,User,Profile,District,Province,Cinema,Branch,Hall,Screening,Movie,Reservation,Seat,Upload,Minimal"
+    operations-sorter: method

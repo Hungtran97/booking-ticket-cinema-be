@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RequestMapping()
+@Tag(name = "Province", description = "APIs for managing province information")
 public interface ProvinceController {
     @GetMapping("/provinces")
     ResponseEntity<?> getProvinces(@RequestParam(defaultValue = "0") int pageNo,

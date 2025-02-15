@@ -57,4 +57,4 @@ build/
 .vscode/
 
 ### ENV ###
-.env.properties
+*.env.properties

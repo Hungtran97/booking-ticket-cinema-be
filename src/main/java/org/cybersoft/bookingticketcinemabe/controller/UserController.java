@@ -1,5 +1,6 @@
 package org.cybersoft.bookingticketcinemabe.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.cybersoft.bookingticketcinemabe.payload.request.user.UserCreationRequest;
 import org.cybersoft.bookingticketcinemabe.payload.request.user.UserCriteria;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @PreAuthorize("hasAuthority('admin') or hasAuthority('super_admin')")
 @RequestMapping
+@Tag(name = "User", description = "APIs for managing user accounts and information")
 public interface UserController {
     @GetMapping("/users")
     ResponseEntity<?> getUsers(UserCriteria userCriteria);
