@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Profile;
 import java.util.List;
 
 @Configuration
-@Profile("dev")
+@Profile({"dev", "test", "render"})
 public class OpenApiConfig {
     @Bean
     public OpenAPI openAPI(@Value("${open.api.title}") String title,

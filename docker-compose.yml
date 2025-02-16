@@ -20,7 +20,7 @@ services:
       - ./src/main/resources/sql/screening.sql:/docker-entrypoint-initdb.d/13-screening.sql
       - ./src/main/resources/sql/screening-seat.sql:/docker-entrypoint-initdb.d/14-screening-seat.sql
     env_file:
-      - .env.properties
+      - dev.env.properties
     ports:
       - 3306:3306
     profiles: [ database ]
