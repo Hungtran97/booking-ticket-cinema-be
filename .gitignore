@@ -58,3 +58,4 @@ build/
 
 ### ENV ###
 *.env.properties
+*.env
