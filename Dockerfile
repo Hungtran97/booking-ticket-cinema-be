@@ -11,7 +11,7 @@ COPY . /app
 RUN mvn clean package -DskipTests
 
 # Sử dụng image Java để chạy ứng dụng
-FROM openjdk:21-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 # Copy tệp JAR đã build từ builder image vào container
 COPY --from=builder /app/target/booking-ticket-cinema-be-0.0.1-SNAPSHOT.jar /app/booking-ticket-cinema-be-0.0.1-SNAPSHOT.jar
