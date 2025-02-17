@@ -173,32 +173,22 @@
             <properties>
                 <activeByDefault>true</activeByDefault>
                 <spring.profile.active>dev</spring.profile.active>
-                <env.file>dev.env.properties</env.file>
+                <env.file>${basedir}/dev.env.properties</env.file>
             </properties>
         </profile>
         <profile>
             <id>test</id>
             <properties>
                 <spring.profile.active>test</spring.profile.active>
-                <env.file>test.env.properties</env.file>
+                <env.file>${basedir}/test.env.properties</env.file>
             </properties>
         </profile>
         <profile>
             <id>render</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>properties-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+            <properties>
+                <env.file>/etc/secrets/.env</env.file>
+            </properties>
+                    
     </profiles>
 
     <build>
@@ -224,7 +214,7 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>${basedir}/${env.file}</file>
+                                <file>${env.file}</file>
                             </files>
                         </configuration>
                     </execution>
@@ -312,9 +302,9 @@
                     <!-- Configure the database connection here -->
                     <jdbc>
                         <driver>com.mysql.cj.jdbc.Driver</driver>
-                        <url>${env.MYSQL_URL}/${env.MYSQL_DATABASE}</url>
-                        <user>${env.MYSQL_ROOT_USERNAME}</user>
-                        <password>${env.MYSQL_ROOT_PASSWORD}</password>
+                        <url>${MYSQL_URL}/${MYSQL_DATABASE}</url>
+                        <user>${MYSQL_ROOT_USERNAME}</user>
+                        <password>${MYSQL_ROOT_PASSWORD}</password>
                     </jdbc>
                 <logging>INFO</logging>
                   <generate></generate>
@@ -336,7 +326,7 @@
 
                             <!-- The database schema (or in the absence of schema support, in your RDBMS this
                                  can be the owner, user, database name) to be generated -->
-                            <inputSchema>${env.MYSQL_DATABASE}</inputSchema>
+                            <inputSchema>${MYSQL_DATABASE}</inputSchema>
 
                             <!-- All elements that are generated from your schema
                                  (A Java regular expression. Use the pipe to separate several expressions)
