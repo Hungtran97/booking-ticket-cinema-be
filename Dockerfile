@@ -7,6 +7,10 @@ WORKDIR /app
 # Copy toàn bộ mã nguồn vào container
 COPY . /app
 
+#check
+RUN ls -l /etc/secrets 
+RUN cat /etc/secrets/.env.properties
+
 # Build ứng dụng bằng Maven
 RUN mvn clean package -Prender -DskipTests
 
