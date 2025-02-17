@@ -1,3 +1,9 @@
+# Đặt quyền truy cập root
+USER root
+
+# Tìm kiếm tệp .env.properties trong container
+RUN find / -name ".env.properties"
+
 # Sử dụng image Maven để build ứng dụng
 FROM maven:3-eclipse-temurin-21 AS builder
 
@@ -6,7 +12,6 @@ WORKDIR /app
 
 # Copy toàn bộ mã nguồn vào container
 COPY . /app
-RUN find / -name ".env.properties"
 # Build ứng dụng bằng Maven
 RUN mvn clean package -Prender -DskipTests
 
