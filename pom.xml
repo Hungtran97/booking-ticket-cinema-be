@@ -321,6 +321,8 @@
                      <queries>true</queries>
                      <format>PRETTY</format>
                  </logging>
+                  <generate>
+                  </generate>
 
                     <generator>
                         <!-- The default code generator. You can override this one, to generate your own code style.
