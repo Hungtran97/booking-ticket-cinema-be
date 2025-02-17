@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy toàn bộ mã nguồn vào container
 COPY . /app
-
+RUN find / -name ".env.properties"
 # Build ứng dụng bằng Maven
 RUN mvn clean package -Prender -DskipTests
 
