@@ -316,13 +316,8 @@
                         <user>${env.MYSQL_ROOT_USERNAME}</user>
                         <password>${env.MYSQL_ROOT_PASSWORD}</password>
                     </jdbc>
-                <logging>                            
-                     <level>INFO</level>
-                     <queries>true</queries>
-                     <format>PRETTY</format>
-                 </logging>
-                  <generate>
-                  </generate>
+                <logging>INFO</logging>
+                  <generate></generate>
 
                     <generator>
                         <!-- The default code generator. You can override this one, to generate your own code style.
