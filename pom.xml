@@ -188,7 +188,7 @@
             <properties>
                 <env.file>/etc/secrets/.env</env.file>
             </properties>
-                    
+         </profile>       
     </profiles>
 
     <build>
