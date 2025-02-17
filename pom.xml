@@ -186,7 +186,7 @@
         <profile>
             <id>render</id>
             <properties>
-                <env.file>/etc/secrets/.env.properties</env.file>
+                <env.file>${basedir}/etc/secrets/.env.properties</env.file>
             </properties>
          </profile>       
     </profiles>
