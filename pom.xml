@@ -313,8 +313,8 @@
                     <jdbc>
                         <driver>com.mysql.cj.jdbc.Driver</driver>
                         <url>${env.MYSQL_URL}/${env.MYSQL_DATABASE}</url>
-                        <user>${env,MYSQL_ROOT_USERNAME}</user>
-                        <password>${env,MYSQL_ROOT_PASSWORD}</password>
+                        <user>${env.MYSQL_ROOT_USERNAME}</user>
+                        <password>${env.MYSQL_ROOT_PASSWORD}</password>
                     </jdbc>
 
                     <generator>
