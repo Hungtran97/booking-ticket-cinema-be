@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Build ứng dụng bằng Maven
-RUN mvn clean package -DskipTests
+RUN mvn clean package -Prender -DskipTests
 
 # Sử dụng image Java để chạy ứng dụng
 FROM eclipse-temurin:21-jdk-alpine
