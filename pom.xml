@@ -186,9 +186,10 @@
         <profile>
             <id>render</id>
             <properties>
+                <spring.profile.active>render</spring.profile.active>
                 <env.file>/app/.env.properties</env.file>
             </properties>
-         </profile>       
+        </profile>
     </profiles>
 
     <build>
@@ -306,8 +307,8 @@
                         <user>${MYSQL_ROOT_USERNAME}</user>
                         <password>${MYSQL_ROOT_PASSWORD}</password>
                     </jdbc>
-                <logging>INFO</logging>
-                  <generate></generate>
+                    <logging>INFO</logging>
+                    <generate></generate>
 
                     <generator>
                         <!-- The default code generator. You can override this one, to generate your own code style.

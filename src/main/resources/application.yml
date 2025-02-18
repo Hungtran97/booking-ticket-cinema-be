@@ -72,3 +72,7 @@ Spring:
     active: test
   config:
     import: optional:file:test.env.properties
+---
+Spring:
+  profiles:
+    active: render
