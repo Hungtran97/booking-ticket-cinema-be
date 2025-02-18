@@ -307,8 +307,6 @@
                         <user>${MYSQL_ROOT_USERNAME}</user>
                         <password>${MYSQL_ROOT_PASSWORD}</password>
                     </jdbc>
-                    <logging>INFO</logging>
-                    <generate></generate>
 
                     <generator>
                         <!-- The default code generator. You can override this one, to generate your own code style.
