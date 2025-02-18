@@ -186,7 +186,7 @@
         <profile>
             <id>render</id>
             <properties>
-                <env.file>/.env.properties</env.file>
+                <env.file>/app/.env.properties</env.file>
             </properties>
          </profile>       
     </profiles>
