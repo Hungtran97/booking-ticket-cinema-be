@@ -11,7 +11,7 @@ COPY . /app
 USER root
 
 # Tìm kiếm tệp .env.properties trong container
-RUN find / -name ".env.properties"
+RUN find / -name "secrets"
 
 
 # Build ứng dụng bằng Maven
