@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Configuration
@@ -43,7 +44,7 @@ public class OpenApiConfig {
     }
 
     @Bean
-    public GroupedOpenApi groupedOpenApi() {
+    public GroupedOpenApi groupedOpenApi() throws IOException {
         return GroupedOpenApi.builder()
                 .group("api-service")
                 .packagesToScan("org.cybersoft.bookingticketcinemabe.controller")

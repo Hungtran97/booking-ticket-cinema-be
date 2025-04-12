@@ -54,25 +54,26 @@ springdoc:
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
-    tags-sorter: "Authentication,User,Profile,District,Province,Cinema,Branch,Hall,Screening,Movie,Reservation,Seat,Upload,Minimal"
+    tags-sorter: alpha
     operations-sorter: method
 logging:
   level:
-    org.jooq: DEBUG
-    org.springframework: DEBUG
+    org.jooq: info
+    org.springframework: info
 ---
-Spring:
-  profiles:
-    active: dev
+spring:
   config:
+    activate:
+      on-profile: dev
     import: optional:file:dev.env.properties
 ---
-Spring:
-  profiles:
-    active: test
+spring:
   config:
+    activate:
+      on-profile: test
     import: optional:file:test.env.properties
 ---
-Spring:
-  profiles:
-    active: render
+spring:
+  config:
+    activate:
+      on-profile: render
